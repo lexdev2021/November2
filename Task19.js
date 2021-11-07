@@ -2,32 +2,19 @@ const list = {
   "create a task": "In Progress",
   "make a bed": "Done",
   "write a post": "To Do",
-  "read english": "To Do",
-  "make a meal": "To Do",
- }
-
- function changeStatus(a, b) {
-  for (let key in list) {
-    if (key == a) {
-      list[key] = b;
-    }
   }
+
+function changeStatus(a, b) {
+  list[a] = b;
 }
-changeStatus("write a post", "Done");
 
 function addTask(a) {
   list[a] = "To Do";
 }
-addTask("have a walk");
 
 function deleteTask(a) {
-  for (let key in list) {
-    if (key == a) {
-      delete list[key];
-    }
-  }
+  delete list[a];
 }
-deleteTask("have a walk");
 
 let c = 0;
 let d = 0;
@@ -63,7 +50,12 @@ function showList() {
   if (e == 0) {
     console.log('-');
   }
-
 }
+addTask("have a walk");
+addTask("read english");
+addTask("make a meal");
+changeStatus("write a post", "Done");
+changeStatus("read english", "Done");
+changeStatus("make a meal", "Done");
+deleteTask("have a walk");
 showList();
-   
